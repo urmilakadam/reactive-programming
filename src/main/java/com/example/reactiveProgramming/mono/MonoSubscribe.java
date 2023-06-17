@@ -12,5 +12,15 @@ public class MonoSubscribe {
                 error -> System.err.println("Error: " + error),     // Error handler
                 () -> System.out.println("Completed")
         );
+
+        Mono<Integer> mono = Mono.just("test")
+                .map(String::length)
+                .map(l-> l/0);
+
+        mono.subscribe(
+                next -> System.out.println("Received: " + next),  // Consumer for each element
+                error -> System.err.println("Error: " + error.getMessage()),     // Error handler
+                () -> System.out.println("Completed")
+        );
     }
 }
