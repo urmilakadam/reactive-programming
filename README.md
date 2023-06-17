@@ -16,6 +16,11 @@ Reactive programming promotes a declarative and functional style of programming,
 
 It's worth noting that reactive programming is a broad topic, and there are other aspects and concepts beyond what has been covered here.
 
+### **Subscribe**
+1. onNext - Consumer<T>
+2. onError - Consumer<Throwable>
+3. onComplete - Runnable
+
 ## **Reactor**
 
 Reactor is a popular reactive programming library for Java.It provides a programming model for building reactive, scalable, and resilient applications. 
