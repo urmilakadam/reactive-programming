@@ -23,4 +23,12 @@ public class Subscriber {
     public static Faker faker(){
         return FAKER_INSTANCE;
     }
+
+    public static void sleepSecond(long sec){
+        try {
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
