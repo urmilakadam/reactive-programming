@@ -21,6 +21,11 @@ It's worth noting that reactive programming is a broad topic, and there are othe
 2. onError - Consumer<Throwable>
 3. onComplete - Runnable
 
+### **Faker**
+It is used to create dummy data.
+
+**Example**: Faker.instance().name().fullName())
+
 ## **Reactor**
 
 Reactor is a popular reactive programming library for Java.It provides a programming model for building reactive, scalable, and resilient applications. 
