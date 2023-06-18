@@ -3,6 +3,8 @@ package com.example.reactiveProgramming.mono;
 import com.example.reactiveProgramming.util.Subscriber;
 import reactor.core.publisher.Mono;
 
+import java.util.concurrent.Callable;
+
 public class MonoFromSubscriber {
 
     public static void main(String[] args) {
@@ -13,6 +15,14 @@ public class MonoFromSubscriber {
         //it will call method only if we subscribe it (lazy evaluate).
         Mono<String> stringMono = Mono.fromSupplier(() -> getName());
         stringMono.subscribe(
+                Subscriber.onNext(),
+                Subscriber.onError(),
+                Subscriber.onComplete()
+        );
+
+        Callable<String> callable = () -> getName();
+        Mono<String> stringMono1 = Mono.fromCallable(callable);
+        stringMono1.subscribe(
                 Subscriber.onNext(),
                 Subscriber.onError(),
                 Subscriber.onComplete()
