@@ -35,9 +35,9 @@ It has 2-different implementations
 1. [x] **Mono<T>** 
 
 It representing a stream of zero or one element. It is similar to Flux, but it guarantees to emit at most one element or an empty completion signal.
-
+![img_3.png](img_3.png)
 ![img_1.png](img_1.png)
-
+![img_4.png](img_4.png)
 2. [x] **Flux<T>**
 
 It emits 0 or N items
