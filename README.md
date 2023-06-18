@@ -32,13 +32,21 @@ Reactor is a popular reactive programming library for Java.It provides a program
 It is mechanism of asynchronous and event-driven programming, allowing developers to compose streams of data or events and process them in a non-blocking manner.
 
 It has 2-different implementations
-1. [x] **Mono<T>** 
+1. [x] **Mono`<T>`** 
 
 It representing a stream of zero or one element. It is similar to Flux, but it guarantees to emit at most one element or an empty completion signal.
-![img_3.png](img_3.png)
 ![img_1.png](img_1.png)
-![img_4.png](img_4.png)
-2. [x] **Flux<T>**
+
+| Type                  | Condition                                                  | What to Use                                                             |
+|-----------------------|------------------------------------------------------------|-------------------------------------------------------------------------|
+| Create Mono           | Data already present                                       | Mono.just(data)                                                         |
+| Create Mono           | Data to be calculated                                      | Mono.fromSupplier(()-> getData())<br/>Mono.fromCallable(()-> getData()) |
+| Create Mono           | Data is coming from AsyncCompletable future                | Mono.fromFuture(future)                                                 |
+| Create Mono           | Emit empty once a given runnable is complete               | Mono.fromRunnable(runnable)                                             |
+| Pass Mono as Argument | Function accepts a Mono`<Address>`. But I do not have data | Mono.empty()                                                            |
+| Return Mono           | Function needs to return Mono                              | Mono.error(...)<br/>Mono.empty()<br/>above creation type                |
+
+2. [x] **Flux`<T>`**
 
 It emits 0 or N items
 
