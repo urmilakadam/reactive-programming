@@ -31,4 +31,12 @@ public class Subscriber {
             throw new RuntimeException(e);
         }
     }
+
+    public static org.reactivestreams.Subscriber<Object> subscriber(){
+        return new DefaultSubscriber();
+    }
+
+    public static org.reactivestreams.Subscriber<Object> subscriber(String name){
+        return new DefaultSubscriber(name);
+    }
 }
