@@ -12,8 +12,8 @@ public class FluxCreate {
                 country = Subscriber.faker().country().name();
                 fluxSink.next(country);
             }while(!country.equalsIgnoreCase("india"));
-
             fluxSink.complete();
-        }).subscribe(Subscriber.subscriber());
+        }).take(3)
+         .subscribe(Subscriber.subscriber());
     }
 }
