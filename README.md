@@ -52,6 +52,12 @@ It emits 0 or N items
 
 ![img_2.png](img_2.png)
 
+It is a publisher of data and supports backpressure, which means it can handle the flow control between publishers and subscribers. Flux provides various methods for creating, transforming, and consuming streams of data in a reactive manner. It emits elements to its subscribers and can be consumed asynchronously.
+
+**FluxSink:** 
+
+FluxSink is an interface that provides a way to emit elements manually into a Flux. It is obtained from the Flux.create() method, which allows you to create a Flux with a custom emitter. FluxSink provides methods such as next(), error(), and complete() to emit elements, errors, or completion signals to the associated Flux. It gives you fine-grained control over the emission of elements and allows you to handle errors and completion manually.
+
 
 
 
