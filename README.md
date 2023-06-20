@@ -58,7 +58,12 @@ It is a publisher of data and supports backpressure, which means it can handle t
 
 FluxSink is an interface that provides a way to emit elements manually into a Flux. It is obtained from the Flux.create() method, which allows you to create a Flux with a custom emitter. FluxSink provides methods such as next(), error(), and complete() to emit elements, errors, or completion signals to the associated Flux. It gives you fine-grained control over the emission of elements and allows you to handle errors and completion manually.
 
+## **Operators**
 
+In Reactor, there are numerous operators available to manipulate and transform reactive streams (Flux and Mono). These operators allow you to perform various operations on the data emitted by the streams. 
+
+1. handle (map + filter)
+2. 
 
 
 
